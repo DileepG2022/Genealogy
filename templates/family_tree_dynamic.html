@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Family Tree</h2>
+    <div id="breadcrumb" class="mb-3"></div>
+    <button id="back-button" class="btn btn-secondary mb-3" style="display: none;">← Back</button>
+    <div id="tree-container"></div>
+</div>
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let treeData = {{ tree_data|safe }};
+        let historyStack = [];
+
+        const width = 1000, height = 500;
+        const svg = d3.select("#tree-container").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate(50,50)");
+
+        const treeLayout = d3.tree().size([width - 100, height - 200]);
+        const breadcrumbDiv = document.getElementById("breadcrumb");
+        const backButton = document.getElementById("back-button");
+
+        backButton.addEventListener("click", function () {
+            if (historyStack.length > 1) {
+                historyStack.pop();  // Remove current view
+                const previous = historyStack[historyStack.length - 1];
+                updateTree(previous, false);  // Don't push to history again
+            }
+        });
+
+        function updateBreadcrumb() {
+            const names = historyStack.map(item => {
+                const parts = item.name.split("(")[0].trim();
+                return parts;
+            });
+
+            breadcrumbDiv.innerHTML = names.map((name, index) => {
+                return `<span class="breadcrumb-item" style="cursor:pointer; color:#007bff;" data-index="${index}">${name}</span>`;
+            }).join(" &gt; ");
+
+            // Clickable breadcrumb trail
+            document.querySelectorAll(".breadcrumb-item").forEach(el => {
+                el.addEventListener("click", function () {
+                    const index = parseInt(this.getAttribute("data-index"));
+                    if (index < historyStack.length) {
+                        const selected = historyStack[index];
+                        historyStack = historyStack.slice(0, index + 1);  // trim trail
+                        updateTree(selected, false);
+                    }
+                });
+            });
+        }
+
+        function updateTree(data, pushToHistory = true) {
+            if (pushToHistory) historyStack.push(data);
+
+            backButton.style.display = historyStack.length > 1 ? "inline-block" : "none";
+            updateBreadcrumb();
+
+            svg.selectAll("*").remove();  // Clear previous tree
+            const root = d3.hierarchy(data);
+            treeLayout(root);
+
+            svg.selectAll(".link")
+                .data(root.links())
+                .enter()
+                .append("path")
+                .attr("class", "link")
+                .attr("d", d3.linkVertical()
+                    .x(d => d.x)
+                    .y(d => d.y))
+                .attr("fill", "none")
+                .attr("stroke", "#999")
+                .attr("stroke-width", 2);
+
+            const node = svg.selectAll(".node")
+                .data(root.descendants())
+                .enter()
+                .append("g")
+                .attr("class", "node")
+                .attr("transform", d => `translate(${d.x},${d.y})`)
+                .style("cursor", "pointer")
+                .on("click", function (event, d) {
+                    if (d.data.id) {
+                        fetch(`/api/person/${d.data.id}/`)
+                            .then(res => res.json())
+                            .then(data => updateTree(data));
+                    }
+                });
+
+            node.append("circle")
+                .attr("r", 25)
+                .attr("fill", "#4CAF50");
+
+            node.append("text")
+                .attr("text-anchor", "middle")
+                .style("fill", "#000")
+                .style("font-size", "12px")
+                .selectAll("tspan")
+                .data(d => {
+                    const parts = d.data.name.split('(');
+                    const name = parts[0].trim();
+                    const spouse = parts[1] ? '(' + parts[1] : null;
+                    return spouse ? [name, spouse] : [name];
+                })
+                .enter()
+                .append("tspan")
+                .attr("x", 0)
+                .attr("dy", (d, i) => i === 0 ? "40" : "14")
+                .text(d => d);
+        }
+
+        updateTree(treeData);
+    });
+</script>
+{% endblock %}

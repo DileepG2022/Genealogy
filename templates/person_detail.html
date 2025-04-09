@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Person Detail</title>
+</head>
+<body>
+    <h2>{{ person.first_name }} {{ person.last_name }}</h2>
+    <p><strong>Birth Date:</strong> {{ person.birth_date }}</p>
+    <p><strong>Death Date:</strong> {{ person.death_date }}</p>
+    <p><strong>Gender:</strong> {{ person.gender }}</p>
+    {% if person.photo %}
+        <img src="{{ person.photo.url }}" alt="{{ person.first_name }}'s photo" width="150">
+    {% endif %}
+    <p><strong>Father:</strong> {% if person.father %}<a href="{% url 'person_detail' person.father.id %}">{{ person.father }}</a>{% else %}N/A{% endif %}</p>
+    <p><strong>Mother:</strong> {% if person.mother %}<a href="{% url 'person_detail' person.mother.id %}">{{ person.mother }}</a>{% else %}N/A{% endif %}</p>
+    <p><strong>Spouse:</strong> {% if person.spouse %}<a href="{% url 'person_detail' person.spouse.id %}">{{ person.spouse }}</a>{% else %}N/A{% endif %}</p>
+    <p><a href="{% url 'family_tree_view' %}">Back to Family Tree</a></p>
+</body>
+</html>

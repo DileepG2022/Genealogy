@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.swp
+*.bak
+
+# Virtual environments
+venv/
+myvenv/
+env/
+ENV/
+.venv/
+.myvenv/
+.ENV/
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+
+# Django migrations (optional, keep if you want to share them)
+*/migrations/__pycache__/
+*/migrations/*.pyc
+
+# Secrets
+.env
+*.env
+
+# VS Code settings (optional)
+.vscode/
+
+# macOS files
+.DS_Store
+
+# Coverage and testing
+htmlcov/
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# MyPy, Pytest, etc.
+.mypy_cache/
+.pytest_cache/
+
+# Node modules (if using npm/yarn for frontend)
+node_modules/

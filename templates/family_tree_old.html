@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}Family Tree{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Family Tree</h2>
+    <div id="familyTree"></div>
+</div>
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
+<script>
+    // Get the family tree data from Django
+    const treeData = {{ tree_data|safe }};
+
+    const margin = { top: 20, right: 90, bottom: 30, left: 90 },
+          width = 600 - margin.left - margin.right,
+          height = 400 - margin.top - margin.bottom;
+
+    const svg = d3.select("#familyTree")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    const tree = d3.tree().size([height, width]);
+    const root = d3.hierarchy(treeData, d => d.children);
+    tree(root);
+
+    svg.selectAll('.link')
+        .data(root.links())
+        .enter().append('path')
+        .attr('class', 'link')
+        .attr('d', d3.linkHorizontal()
+            .x(d => d.y)
+            .y(d => d.x))
+        .style('fill', 'none')
+        .style('stroke', '#ccc')
+        .style('stroke-width', 2);
+
+    const nodes = svg.selectAll('.node')
+        .data(root.descendants())
+        .enter().append('g')
+        .attr('class', 'node')
+        .attr('transform', d => 'translate(' + d.y + ',' + d.x + ')');
+
+    nodes.append('circle')
+        .attr('r', 10)
+        .style('fill', '#fff')
+        .style('stroke', '#000')
+        .style('stroke-width', 2);
+
+    nodes.append('text')
+        .attr('dy', -15)
+        .attr('x', d => d.children ? -15 : 15)
+        .style('text-anchor', 'middle')
+        .text(d => d.data.name);  // Displays name with spouse in brackets
+</script>
+
+<style>
+    .node {
+        cursor: pointer;
+    }
+    .node text {
+        font-size: 12px;
+        font-family: Arial, sans-serif;
+    }
+    .link {
+        fill: none;
+        stroke: #ccc;
+        stroke-width: 2px;
+    }
+</style>
+{% endblock %}

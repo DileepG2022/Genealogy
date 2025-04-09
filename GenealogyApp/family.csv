@@ -1,0 +1,167 @@
+ID,First Name,Last Name,Gender,Birth Date,Death Date,Father,Mother,Spouse,Family Group
+I1,Govinda Panicker,,M,,,,,,Kurup_Family
+I2,Kochu Pennu ,,F,,,,,Govinda Panicker,Kurup_Family
+I3,Madhava Kurup G,,M,,,Govinda Panicker,Kochu Pennu ,Kunju Pennu ,Kurup_Family
+I4,Easwara Kurup G,,M,,,Govinda Panicker,Kochu Pennu ,Laxmi Amma,Kurup_Family
+I5,Sankara Kurup G,,M,,,Govinda Panicker,Kochu Pennu ,Parvathi ,Kurup_Family
+I6,Padmanabha Kurup G,,M,,,Govinda Panicker,Kochu Pennu ,Omana ,Kurup_Family
+I7,Damodara Kurup G,,M,,,Govinda Panicker,Kochu Pennu ,Ammukochamma ,Kurup_Family
+I8,Karunakara Kurup G,,M,,,Govinda Panicker,Kochu Pennu ,Ponnamma B ,Kurup_Family
+I9,Sreedhara Kurup G,,M,,,Govinda Panicker,Kochu Pennu ,Aniyan kochamma ,Kurup_Family
+I10,Kunju Pennu ,,F,,,,,Madhava Kurup G,Kurup_Family
+I11,Kurup ,,M,,,Madhava Kurup G,Kunju Pennu ,Kakka ,Kurup_Family
+I12,Govinda Pillai K,,M,,,Madhava Kurup G,Kunju Pennu ,Peramma ,Kurup_Family
+I13,Karunakara Pillai K,,M,,,Madhava Kurup G,Kunju Pennu ,Bharathi ,Kurup_Family
+I14,Keshava Pillai K,,M,,,Madhava Kurup G,Kunju Pennu ,Ammu amma ,Kurup_Family
+I15,Shekhara Pillai K,,M,,,Madhava Kurup G,Kunju Pennu ,Vijayamma ,Kurup_Family
+I16,Dr. Ayyappan Pillai K S,,M,,,Madhava Kurup G,Kunju Pennu ,Sarojini Devi (Ammini kutty) ,Kurup_Family
+I17,Laxmi kutty amma K,,F,,,Madhava Kurup G,Kunju Pennu ,Sukumaran Nair,Kurup_Family
+I18,Laxmi Amma,,F,,,,,Easwara Kurup G,Kurup_Family
+I19,Narayana Pillai V.E.,,M,,,Easwara Kurup G,Laxmi Amma,Padmini Amma K,Kurup_Family
+I20,Madhavan Pillai P.E,,M,,,Easwara Kurup G,Laxmi Amma,Laxmi kutty amma ,Kurup_Family
+I21,Govinda Pillai P.E,,M,,,Easwara Kurup G,Laxmi Amma,Padmavathi Amma ,Kurup_Family
+I22,Vasudevan Pillai P.E,,M,,,Easwara Kurup G,Laxmi Amma,Vasu Kochamma ,Kurup_Family
+I23,Thangamma P.E,,F,,,Easwara Kurup G,Laxmi Amma,Vasudevan ,Kurup_Family
+I24,Laxmanan Pillai P.E,,M,,,Easwara Kurup G,Laxmi Amma,Prasanna Kumari,Kurup_Family
+I25,Parvathi ,,F,,,,,Sankara Kurup G,Kurup_Family
+I26,Nalinidevi TS,,F,,,Sankara Kurup G,Parvathi ,Purushothaman Nair,Kurup_Family
+I27,Madhavan Nair TS,,M,,,Sankara Kurup G,Parvathi ,Sumathi Kutty Amma M.G.,Kurup_Family
+I28,Gomathi Amma TS,,F,,,Sankara Kurup G,Parvathi ,Balakrishna Kurup,Kurup_Family
+I29,Omana ,,F,,,,,Padmanabha Kurup G,Kurup_Family
+I30,Garudeshwara Panicker,,M,,,Padmanabha Kurup G,Omana ,Balamani Amma ,Kurup_Family
+I31,Balakrishna Panicker,,M,,,Padmanabha Kurup G,Omana ,Vijayamma ,Kurup_Family
+I32,Shanthamma A,A,F,,,Padmanabha Kurup G,Omana ,,Kurup_Family
+I33,Dr. P P Mohanan Kutty (Moni) ,,M,,,Padmanabha Kurup G,Omana ,Krishna Kumari ,Kurup_Family
+I34,P P Madhavan Kutty ,,M,,,Padmanabha Kurup G,Omana ,,Kurup_Family
+I35,Madhusoodanan Kutty ,,M,,,Padmanabha Kurup G,Omana ,Priya ,Kurup_Family
+I36,Ammukochamma ,,F,,,,,Damodara Kurup G,Kurup_Family
+I37,Chandran ,,M,,,Damodara Kurup G,Ammukochamma ,,Kurup_Family
+I38,Raman Kutty ,,M,,,Damodara Kurup G,Ammukochamma ,,Kurup_Family
+I39,Ravi Kutty ,,M,,,Damodara Kurup G,Ammukochamma ,,Kurup_Family
+I40,Viswan Kutty ,,M,,,Damodara Kurup G,Ammukochamma ,,Kurup_Family
+I41,Santhosh ,,M,,,Damodara Kurup G,Ammukochamma ,,Kurup_Family
+I42,Rethnamma ,,F,,,Damodara Kurup G,Ammukochamma ,,Kurup_Family
+I43,Rajamma ,,F,,,Damodara Kurup G,Ammukochamma ,,Kurup_Family
+I44,Chellamma ,,F,,,Damodara Kurup G,Ammukochamma ,,Kurup_Family
+I45,Ponnamma B ,,F,,,,,Karunakara Kurup G,Kurup_Family
+I46,Thankamany ,,F,,,Karunakara Kurup G,Ponnamma B ,Arvindakshan Nair,Kurup_Family
+I47,Rajasekharan Nair,,M,,,Karunakara Kurup G,Ponnamma B ,Thankamony ,Kurup_Family
+I48,Rema B,B,F,,,Karunakara Kurup G,Ponnamma B ,Velukuttan ,Kurup_Family
+I49,PK Ramachandran Nair,,M,,,Karunakara Kurup G,Ponnamma B ,Beena ,Kurup_Family
+I50,Rathi ,,F,,,Karunakara Kurup G,Ponnamma B ,Sasi ,Kurup_Family
+I51,Radhika ,,F,,,Karunakara Kurup G,Ponnamma B ,Radhakrishnan N,Kurup_Family
+I52,Aniyan kochamma ,,,,,,,Sreedhara Kurup G,Kurup_Family
+I53,Sukumaran ,,M,,,Sreedhara Kurup G,Aniyan kochamma ,,Kurup_Family
+I54,Kunjumon ,,M,,,Sreedhara Kurup G,Aniyan kochamma ,,Kurup_Family
+I55,Balakrishnan ,,M,,,Sreedhara Kurup G,Aniyan kochamma ,,Kurup_Family
+I56,Subhadra ,,F,,,Sreedhara Kurup G,Aniyan kochamma ,,Kurup_Family
+I57,Daughter5 ,,F,,,Sreedhara Kurup G,Aniyan kochamma ,,Kurup_Family
+I58,Daughter6 ,,F,,,Sreedhara Kurup G,Aniyan kochamma ,,Kurup_Family
+I59,Kakka ,,F,,,,,Kurup ,Kurup_Family
+I60,Peramma ,,F,,,,,Govinda Pillai K,Kurup_Family
+I61,Kamalamma ,,F,,,Govinda Pillai K,Peramma ,Parippu chettan ,Kurup_Family
+I62,Shanthamma ,C,F,,,Govinda Pillai K,Peramma ,,Kurup_Family
+I63,Padmini ,,F,,,Govinda Pillai K,Peramma ,Aniyan Chettan ,Kurup_Family
+I64,Anandikuttan ,,M,,,Govinda Pillai K,Peramma ,,Kurup_Family
+I65,Nirmala ,,F,,,Govinda Pillai K,Peramma ,,Kurup_Family
+I66,Anupennu ,,M,,,Govinda Pillai K,Peramma ,,Kurup_Family
+I67,Hari ,,M,,,Govinda Pillai K,Peramma ,,Kurup_Family
+I68,Bharathi ,,F,,,,,Karunakara Pillai K,Kurup_Family
+I69,Keshava Kaimal,,M,,,Karunakara Pillai K,Bharathi ,,Kurup_Family
+I70,Sarojini ,,F,,,Karunakara Pillai K,Bharathi ,Shashi ,Kurup_Family
+I71,Thangamani ,,M,,,Karunakara Pillai K,Bharathi ,,Kurup_Family
+I72,Indira ,,F,,,Karunakara Pillai K,Bharathi ,,Kurup_Family
+I73,Ammini kutty ,,F,,,Karunakara Pillai K,Bharathi ,,Kurup_Family
+I74,Arun ,,M,,,Karunakara Pillai K,Bharathi ,,Kurup_Family
+I75,Ammu amma ,,F,,,,,Keshava Pillai K,Kurup_Family
+I76,Mukunda das ,,M,,,Keshava Pillai K,Ammu amma ,Rema I,Kurup_Family
+I77,Madhava das ,,M,,,Keshava Pillai K,Ammu amma ,,Kurup_Family
+I78,Radha mani ,,F,,,Keshava Pillai K,Ammu amma ,,Kurup_Family
+I79,Mohan das ,,M,,,Keshava Pillai K,Ammu amma ,,Kurup_Family
+I80,Vallyachan ,,M,,,Keshava Pillai K,Ammu amma ,,Kurup_Family
+I81,Vijayamma D,,F,,,,,Shekhara Pillai K,Kurup_Family
+I82,Chandrika devi ,,F,,,Shekhara Pillai K,Vijayamma D,,Kurup_Family
+I83,Chandra mohan ,,M,,,Shekhara Pillai K,Vijayamma D,,Kurup_Family
+I84,Chandramani ,,F,,,Shekhara Pillai K,Vijayamma D,,Kurup_Family
+I85,Sarojini Devi (Ammini kutty) ,,F,,,,,Dr. Ayyappan Pillai K S,Kurup_Family
+I86,Dr. Anilkumar ,,M,,,,,Dr. Jayasree ,Kurup_Family
+I87,Adv. Jayachandran ,,M,,,Dr. Ayyappan Pillai K S,Sarojini Devi (Ammini kutty) ,,Kurup_Family
+I88,Jayaram ,,M,,,Dr. Ayyappan Pillai K S,Sarojini Devi (Ammini kutty) ,,Kurup_Family
+I89,Sukumaran Nair,,M,,,,,Laxmi kutty amma K,Kurup_Family
+I90,Madhavan Nair,,M,,,Sukumaran Nair,Laxmi kutty amma K,,Kurup_Family
+I91,Anil Nair,,M,,,Sukumaran Nair,Laxmi kutty amma K,,Kurup_Family
+I92,Sunil Nair,,M,,,Sukumaran Nair,Laxmi kutty amma K,,Kurup_Family
+I93,Vijayalaxmi ,,F,,,Sukumaran Nair,Laxmi kutty amma K,,Kurup_Family
+I94,Padmini Amma K,,F,,,,,Narayana Pillai V.E.,Kurup_Family
+I95,Rugmini Amma TN,,F,,,Narayana Pillai V.E.,Padmini Amma K,,Kurup_Family
+I96,T N Sreedhara Kurup ,,M,,,Narayana Pillai V.E.,Padmini Amma K,,Kurup_Family
+I97,T N Parameswara Kurup ,,M,,,Narayana Pillai V.E.,Padmini Amma K,,Kurup_Family
+I98,Sobhanakumari TN,,F,,,Narayana Pillai V.E.,Padmini Amma K,,Kurup_Family
+I99,Anandavalli TN,,F,,,Narayana Pillai V.E.,Padmini Amma K,,Kurup_Family
+I100,Gopakumar TN,,M,,,Narayana Pillai V.E.,Padmini Amma K,,Kurup_Family
+I101,Laxmi kutty amma ,,F,,,,,Madhavan Pillai P.E,Kurup_Family
+I102,Sula amma ,,F,,,Madhavan Pillai P.E,Laxmi kutty amma ,,Kurup_Family
+I103,Muraleedhara Kurup,,M,,,Madhavan Pillai P.E,Laxmi kutty amma ,,Kurup_Family
+I104,Susheela ,,F,,,Madhavan Pillai P.E,Laxmi kutty amma ,,Kurup_Family
+I105,Suresh ,,M,,,Madhavan Pillai P.E,Laxmi kutty amma ,,Kurup_Family
+I106,Padmavathi Amma ,,F,,,,,Govinda Pillai P.E,Kurup_Family
+I107,Anil ,,M,,,Govinda Pillai P.E,Padmavathi Amma ,,Kurup_Family
+I108,Anitha ,,F,,,Govinda Pillai P.E,Padmavathi Amma ,,Kurup_Family
+I109,Anila ,,F,,,Govinda Pillai P.E,Padmavathi Amma ,,Kurup_Family
+I110,Vasu Kochamma ,,F,,,,,Vasudevan Pillai P.E,Kurup_Family
+I111,Bindu Panicker,,F,,,Vasudevan Pillai P.E,Vasu Kochamma ,,Kurup_Family
+I112,Bini Panicker,,F,,,Vasudevan Pillai P.E,Vasu Kochamma ,,Kurup_Family
+I113,Vasudevan ,,M,,,,,Thangamma P.E,Kurup_Family
+I114,Sanal ,,M,,,Vasudevan ,Thangamma P.E,,Kurup_Family
+I115,Prasanna Kumari,,F,,,,,Laxmanan Pillai P.E,Kurup_Family
+I116,Raji ,,F,,,Laxmanan Pillai P.E,Prasanna Kumari,,Kurup_Family
+I117,Reshmi ,,F,,,Laxmanan Pillai P.E,Prasanna Kumari,,Kurup_Family
+I118,Purushothaman Nair,,M,,,,,Nalinidevi TS,Kurup_Family
+I119,Mohandas TP,,M,,,Purushothaman Nair,Nalinidevi TS,,Kurup_Family
+I120,Manmadhan MP,,M,,,Purushothaman Nair,Nalinidevi TS,,Kurup_Family
+I121,Manilal MP,,M,,,Purushothaman Nair,Nalinidevi TS,,Kurup_Family
+I122,Muralidharan Nair MP,,M,,,Purushothaman Nair,Nalinidevi TS,,Kurup_Family
+I123,Mrudula Nair,,F,,,Purushothaman Nair,Nalinidevi TS,,Kurup_Family
+I124,Maya MP,,F,,,Purushothaman Nair,Nalinidevi TS,,Kurup_Family
+I125,Sumathi Kutty Amma M.G.,,F,,,,,Madhavan Nair TS,Kurup_Family
+I126,Deyal TP,,M,,,Madhavan Nair TS,Sumathi Kutty Amma M.G.,,Kurup_Family
+I127,Uthaman TP,,M,,,Madhavan Nair TS,Sumathi Kutty Amma M.G.,,Kurup_Family
+I128,Jayanarayan T,,M,,,Madhavan Nair TS,Sumathi Kutty Amma M.G.,,Kurup_Family
+I129,Devi Rajeev Nair,,F,,,Madhavan Nair TS,Sumathi Kutty Amma M.G.,,Kurup_Family
+I130,Balakrishna Kurup,,M,,,,,Gomathi Amma TS,Kurup_Family
+I131,Latha B,,F,,,Balakrishna Kurup,Gomathi Amma TS,,Kurup_Family
+I132,Suresh B,,M,,,Balakrishna Kurup,Gomathi Amma TS,,Kurup_Family
+I133,Satheesh B,,,,,Balakrishna Kurup,Gomathi Amma TS,,Kurup_Family
+I134,Balamani Amma ,,F,,,,,Garudeshwara Panicker,Kurup_Family
+I135,Anil Kumar K G,,M,,,Garudeshwara Panicker,Balamani Amma ,,Kurup_Family
+I136,Shiela ,,F,,,Garudeshwara Panicker,Balamani Amma ,,Kurup_Family
+I137,Bindu ,,F,,,Garudeshwara Panicker,Balamani Amma ,,Kurup_Family
+I138,Vijayamma ,E,F,,,,,Balakrishna Panicker,Kurup_Family
+I139,Akash Mattathil,,M,,,Balakrishna Panicker,Vijayamma ,,Kurup_Family
+I140,Asha F,F,F,,,Balakrishna Panicker,Vijayamma ,,Kurup_Family
+I141,Krishna Kumari ,,F,,,,,Dr. P P Mohanan Kutty (Moni) ,Kurup_Family
+I142,Vinu Mohan ,,M,,,Dr. P P Mohanan Kutty (Moni) ,Krishna Kumari ,,Kurup_Family
+I143,Veena Mohan ,,F,,,Dr. P P Mohanan Kutty (Moni) ,Krishna Kumari ,,Kurup_Family
+I144,Priya ,,F,,,,,Madhusoodanan Kutty ,Kurup_Family
+I145,Unnikuttan ,,M,,,Madhusoodanan Kutty ,Priya ,,Kurup_Family
+I146,Manikuttan ,,M,,,Madhusoodanan Kutty ,Priya ,,Kurup_Family
+I147,Arvindakshan Nair,,M,,,,,Thankamany ,Kurup_Family
+I148,Anish ,,M,,,Arvindakshan Nair,Thankamany ,,Kurup_Family
+I149,Asha G,G,F,,,Arvindakshan Nair,Thankamany ,,Kurup_Family
+I150,Thankamony ,,F,,,,,Rajasekharan Nair,Kurup_Family
+I151,Aswathy Rajasekharan Nair,,F,,,Rajasekharan Nair,Thankamony ,,Kurup_Family
+I152,Velukuttan ,,M,,,,,Rema B,Kurup_Family
+I153,Ajith ,,M,,,Velukuttan ,Rema B,,Kurup_Family
+I154,Asha H,H,F,,,Velukuttan ,Rema B,,Kurup_Family
+I155,Beena ,,F,,,,,PK Ramachandran Nair,Kurup_Family
+I156,Rahul ,,M,,,PK Ramachandran Nair,Beena ,,Kurup_Family
+I157,Nikhil ,,M,,,PK Ramachandran Nair,Beena ,,Kurup_Family
+I158,Sasi ,,M,,,,,Rathi ,Kurup_Family
+I159,Sarath ,,M,,,Sasi ,Rathi ,,Kurup_Family
+I160,Shyam Kumar ,,M,,,Sasi ,Rathi ,,Kurup_Family
+I161,Radhakrishnan N,,M,,,,,Radhika ,Kurup_Family
+I162,Vishnu R Nair,,M,,,Radhakrishnan N,Radhika ,,Kurup_Family
+I163,Parippu chettan ,,M,,,,,Kamalamma ,Kurup_Family
+I165,Shashi ,,M,,,,,Sarojini ,Kurup_Family
+I166,Rema I,I,F,,,,,Mukunda das ,Kurup_Family
+I172,Dr. Jayasree ,,F,,,Dr. Ayyappan Pillai K S,Sarojini Devi (Ammini kutty) ,Dr. Anilkumar ,Kurup_Family

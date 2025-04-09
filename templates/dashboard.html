@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>Welcome to the Family Tree Dashboard</h2>
+            <p class="lead">Manage and explore your family genealogy.</p>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title">View Family Tree</h5>
+                    <p class="card-text">Explore the entire family structure.</p>
+                    <a href="{% url 'family_tree' %}" class="btn btn-primary">View Tree</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Import CSV Section -->
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Import Family Data</h5>
+                    <p class="card-text">Upload a CSV file to add family members.</p>
+                    <a href="{% url 'import_csv' %}" class="btn btn-primary">Import CSV</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Export Data</h5>
+                    <p class="card-text">Download family records in CSV, JSON, or PDF format.</p>
+                    <a href="{% url 'export_family_tree_pdf' %}" class="btn btn-secondary">Export as PDF</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Logout</h5>
+                    <p class="card-text">Securely exit the application.</p>
+                    <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

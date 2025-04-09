@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Family Tree</h2>
+    <button id="export-pdf" class="btn btn-primary mb-3">Export to PDF</button>
+    <div id="tree-container" class="border rounded p-3" style="overflow: hidden;"></div>
+</div>
+
+<!-- Include D3.js, jsPDF, and svg2pdf.js -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/svg2pdf.js@1.4.0/dist/svg2pdf.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var treeData = {{ tree_data|safe }};  // Django Data
+
+    if (!treeData || Object.keys(treeData).length === 0) {
+        console.error("Error: Empty or invalid tree data.");
+        return;
+    }
+
+    var width = 1200, height = 800;
+
+    var svg = d3.select("#tree-container").append("svg")
+        .attr("id", "family-tree-svg")
+        .attr("width", width)
+        .attr("height", height)
+        .append("g")
+        .attr("transform", "translate(50, 50)");
+
+    var treeLayout = d3.tree().size([width - 100, height - 100]);
+    var root = d3.hierarchy(treeData);
+    treeLayout(root);
+
+    var linkGenerator = d3.linkVertical()
+        .x(d => d.x)
+        .y(d => d.y);
+
+    svg.selectAll(".link")
+        .data(root.links())
+        .enter()
+        .append("path")
+        .attr("class", "link")
+        .attr("d", linkGenerator)
+        .attr("fill", "none")
+        .attr("stroke", "#555")
+        .attr("stroke-width", 2);
+
+    var nodes = svg.selectAll(".node")
+        .data(root.descendants())
+        .enter()
+        .append("g")
+        .attr("class", "node")
+        .attr("transform", d => `translate(${d.x},${d.y})`);
+
+    // Add Expand/Collapse functionality
+    nodes.append("circle")
+        .attr("r", 20)
+        .attr("fill", "#4285F4")
+        .style("cursor", "pointer")
+        .on("click", function (event, d) {
+            if (d.children) {
+                d._children = d.children;
+                d.children = null;
+            } else {
+                d.children = d._children;
+                d._children = null;
+            }
+            updateTree();
+        });
+
+    // Dynamic Name Labels
+    nodes.append("text")
+        .attr("dy", 30)
+        .attr("text-anchor", "middle")
+        .style("font-size", d => Math.max(8, 16 - d.depth * 2) + "px")
+        .style("fill", "#000")
+        .text(d => d.data.name);
+
+    // Tooltip for Full Names
+    var tooltip = d3.select("body").append("div")
+        .style("position", "absolute")
+        .style("background", "#fff")
+        .style("padding", "5px 10px")
+        .style("border", "1px solid #ccc")
+        .style("border-radius", "5px")
+        .style("box-shadow", "2px 2px 5px rgba(0,0,0,0.3)")
+        .style("visibility", "hidden");
+    
+        function updateTree() {
+    treeLayout(root);
+
+    // Update links (parent-child connectors)
+    var link = svg.selectAll(".link")
+        .data(root.links(), d => d.target.data.name);  // Unique key for each link
+
+    // ENTER (Create new links)
+    link.enter()
+        .append("path")
+        .attr("class", "link")
+        .attr("fill", "none")
+        .attr("stroke", "#555")
+        .attr("stroke-width", 2)
+        .merge(link)  // MERGE with existing links
+        .transition().duration(500)
+        .attr("d", linkGenerator);
+
+    // EXIT (Remove unused links)
+    link.exit().remove();
+
+    // Update nodes (people in the tree)
+    var node = svg.selectAll(".node")
+        .data(root.descendants(), d => d.data.name);  // Unique key for each node
+
+    // ENTER (Create new nodes)
+    var nodeEnter = node.enter()
+        .append("g")
+        .attr("class", "node")
+        .attr("transform", d => `translate(${d.x},${d.y})`);
+
+    nodeEnter.append("circle")
+        .attr("r", 20)
+        .attr("fill", "#4285F4")
+        .style("cursor", "pointer")
+        .on("click", function (event, d) {
+            if (d.children) {
+                d._children = d.children;
+                d.children = null;
+            } else {
+                d.children = d._children;
+                d._children = null;
+            }
+            updateTree();  // Re-render tree
+        });
+
+    nodeEnter.append("text")
+        .attr("dy", 30)
+        .attr("text-anchor", "middle")
+        .style("font-size", d => Math.max(8, 16 - d.depth * 2) + "px")
+        .style("fill", "#000")
+        .text(d => d.data.name);
+
+    // MERGE (Update existing nodes)
+    nodeEnter.merge(node)
+        .transition().duration(500)
+        .attr("transform", d => `translate(${d.x},${d.y})`);
+
+    // EXIT (Remove unused nodes)
+    node.exit().remove();
+}
+
+
+    nodes.on("mouseover", function (event, d) {
+            tooltip.style("visibility", "visible")
+                   .html(d.data.name)
+                   .style("top", (event.pageY - 10) + "px")
+                   .style("left", (event.pageX + 10) + "px");
+        })
+        .on("mouseout", function () {
+            tooltip.style("visibility", "hidden");
+        });
+
+    // Zoom and Pan
+    var zoom = d3.zoom()
+        .scaleExtent([0.5, 2])  
+        .on("zoom", function (event) {
+            svg.attr("transform", event.transform);
+        });
+
+    d3.select("svg").call(zoom);
+
+    // Export to PDF
+    document.getElementById("export-pdf").addEventListener("click", function() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF("landscape", "mm", "a4");
+        const svgElement = document.getElementById("family-tree-svg");
+
+        svg2pdf(svgElement, doc, {
+            xOffset: 10,
+            yOffset: 10,
+            scale: 0.7  
+        });
+
+        doc.save("family_tree.pdf");
+    });
+
+});
+</script>
+
+{% endblock %}
